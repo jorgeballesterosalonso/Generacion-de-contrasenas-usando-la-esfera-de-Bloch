@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Cosas {
 
 	public static void main(String[] args) {
-		recogidadedatos();
 
+		recogidadedatos();
 		calcularAngulo();
 	}
 
@@ -16,50 +16,80 @@ public class Cosas {
 		System.out.println("Ingrese la primera coordenada del 0 al 10");
 		double x;
 
-		try {
-			x = Double.parseDouble(sc.next());
+		boolean repetir = false;
+		do {
+			try {
+				x = Double.parseDouble(sc.next());
+				repetir = false;
 
-		} catch (NumberFormatException e) {
-			System.err.println("Ingrese un caracter válido");
-			x = Double.parseDouble(sc.next());
-		}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				x = 0;
+			}
+			try {
+				while (x > 10 || x < 0) {
+					System.err.println("Ingrese un número dentro del rango (0-10)");
+					x = Double.parseDouble(sc.next());
+				}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				x = 0;
+			}
+		} while (repetir);
 
-		while (x > 10 || x < 0) {
-			System.err.println("Ingrese un número dentro del rango (0-10)");
-			x = sc.nextDouble();
-		}
-
-		System.out.println("Ingrese la primera coordenada del 0 al 10");
+		System.out.println("Ingrese la segunda coordenada del 0 al 10");
 		double y;
 
-		try {
-			y = Double.parseDouble(sc.next());
+		do {
+			try {
+				y = Double.parseDouble(sc.next());
+				repetir = false;
 
-		} catch (NumberFormatException e) {
-			System.err.println("Ingrese un caracter válido");
-			y = Double.parseDouble(sc.next());
-		}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				y = 0;
 
-		while (y > 10 || y < 0) {
-			System.err.println("Ingrese un número dentro del rango (0-10)");
-			y = sc.nextDouble();
-		}
+			}
+			try {
+				while (y > 10 || y < 0) {
+					System.err.println("Ingrese un número dentro del rango (0-10)");
+					y = Double.parseDouble(sc.next());
+				}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				y = 0;
+			}
+		} while (repetir);
 
-		System.out.println("Ingrese la primera coordenada del 0 al 10");
+		System.out.println("Ingrese la tercera coordenada del 0 al 10");
 		double z;
 
-		try {
-			z = Double.parseDouble(sc.next());
+		do {
+			try {
+				z = Double.parseDouble(sc.next());
+				repetir = false;
 
-		} catch (NumberFormatException e) {
-			System.err.println("Ingrese un caracter válido");
-			z = Double.parseDouble(sc.next());
-		}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				z = 0;
 
-		while (z > 10 || z < 0) {
-			System.err.println("Ingrese un número dentro del rango (0-10)");
-			z = sc.nextDouble();
-		}
+			}
+			try {
+				while (z > 10 || z < 0) {
+					System.err.println("Ingrese un número dentro del rango (0-10)");
+					z = Double.parseDouble(sc.next());
+				}
+			} catch (NumberFormatException e) {
+				System.err.println("Ingrese un caracter válido");
+				repetir = true;
+				z = 0;
+			}
+		} while (repetir);
 
 		System.out.println("Ingrese el factor de multiplicación cualquiera");
 		double factor;
