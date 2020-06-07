@@ -3,18 +3,29 @@ import java.util.Scanner;
 
 public class Cosas {
 
+	static double x;
+	static double y;
+	static double z;
+
 	public static void main(String[] args) {
 
 		recogidadedatos();
-		calcularAngulo();
+
+		System.out.print("Ángulo formado por el vector de O al punto ingresado y el plano OYZ:  ");
+		System.out.println(calcularAngulo(1));
+
+		System.out.print("Ángulo formado por el vector de O al punto ingresado y el plano OXY:  ");
+		System.out.println(calcularAngulo(2));
+
+		System.out.print("Ángulo formado por el vector de O al punto ingresado y el plano OXZ:  ");
+		System.out.println(calcularAngulo(3));
 	}
 
-	private static void recogidadedatos() {
+	public static void recogidadedatos() {
 
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Ingrese la primera coordenada del 0 al 10");
-		double x;
 
 		boolean repetir = false;
 		do {
@@ -40,7 +51,6 @@ public class Cosas {
 		} while (repetir);
 
 		System.out.println("Ingrese la segunda coordenada del 0 al 10");
-		double y;
 
 		do {
 			try {
@@ -66,7 +76,6 @@ public class Cosas {
 		} while (repetir);
 
 		System.out.println("Ingrese la tercera coordenada del 0 al 10");
-		double z;
 
 		do {
 			try {
@@ -109,8 +118,28 @@ public class Cosas {
 		sc.close();
 	}
 
-	private static int calcularAngulo() {
-		int angulo = 0;
-		return angulo;
+	public static double calcularAngulo(int a) {
+
+		switch (a) {
+
+		case 1:
+			double anguloOYZ = 0;
+			anguloOYZ = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
+			return anguloOYZ;
+
+		case 2:
+			double anguloOXY = 0;
+			anguloOXY = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
+			return anguloOXY;
+
+		case 3:
+			double anguloOXZ = 0;
+			anguloOXZ = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
+			return anguloOXZ;
+
+		default:
+			return 0;
+		}
+
 	}
 }
