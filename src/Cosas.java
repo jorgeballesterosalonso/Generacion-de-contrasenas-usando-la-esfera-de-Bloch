@@ -9,7 +9,7 @@ public class Cosas {
 
 	public static void main(String[] args) {
 
-		recogidadedatos();
+		recogidaDeDatos();
 
 		System.out.print("Ángulo formado por el vector de O al punto ingresado y el plano OYZ:  ");
 		System.out.println(calcularAngulo(1));
@@ -21,7 +21,10 @@ public class Cosas {
 		System.out.println(calcularAngulo(3));
 	}
 
-	public static void recogidadedatos() {
+	/**
+	 * Recoge los datos para las variables X, Y, Z
+	 */
+	public static void recogidaDeDatos() {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -118,11 +121,20 @@ public class Cosas {
 		sc.close();
 	}
 
+	/**
+	 * Devuelve el ángulo calculado del vector con los 3 planos principales
+	 * @param a el caso de con qué plano se quiere calcular (1 OYZ, 2 OXY, 3OXZ)
+	 * @return el ángulo correspondiente
+	 */
 	public static double calcularAngulo(int a) {
 
 		switch (a) {
 
 		case 1:
+			//Caso de prueba x=3, y=2, z=1
+			//Resultados esperados: alpha=15.5º beta=32.31º gamma=53.3º
+			//GeoGebra: https://www.geogebra.org/3d/zfrn35mh
+			
 			double anguloOYZ = 0;
 			anguloOYZ = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
 			return anguloOYZ;
