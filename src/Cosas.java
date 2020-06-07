@@ -6,6 +6,7 @@ public class Cosas {
 	static double x;
 	static double y;
 	static double z;
+	static double vector1;
 
 	public static void main(String[] args) {
 
@@ -114,7 +115,7 @@ public class Cosas {
 			factor = Double.parseDouble(sc.next());
 
 		}
-		double vector1 = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+		vector1 = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2))*factor;
 
 		System.out.println(vector1);
 
@@ -135,19 +136,22 @@ public class Cosas {
 			//Resultados esperados: alpha=15.5º beta=32.31º gamma=53.3º
 			//GeoGebra: https://www.geogebra.org/3d/zfrn35mh
 			
-			double anguloOYZ = 0;
-			anguloOYZ = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
-			return anguloOYZ;
+			//Plano base según maqueta
+			double anguloOXZ = 0;
+			anguloOXZ = 1/(Math.sin(y / vector1));
+			return anguloOXZ;
 
 		case 2:
+			//Plano derecho según maqueta
 			double anguloOXY = 0;
-			anguloOXY = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
+			anguloOXY = Math.sin(z / vector1);
 			return anguloOXY;
 
 		case 3:
-			double anguloOXZ = 0;
-			anguloOXZ = Math.acos((y * y + z * z) / Math.sqrt((x * x + y * y + z * z) * (y * y + x * x)));
-			return anguloOXZ;
+			//Plano izquierdo según maqueta
+			double anguloOYZ = 0;
+			anguloOYZ = Math.sin(x / vector1);
+			return anguloOYZ;
 
 		default:
 			return 0;
