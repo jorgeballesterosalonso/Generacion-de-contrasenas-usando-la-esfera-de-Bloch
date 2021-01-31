@@ -6,11 +6,10 @@ import java.lang.Math;
 public class Logic {
 
     public static double calcularAnguloX0Y(Punto punto, Vector vector) {
-        long x = punto.getCoordX();
-        long y = punto.getCoordY();
+        
         long z = punto.getCoordZ();
 
-        double angulo = Math.asin(z / vector.getModulo());
+        double angulo = Math.acos(z / vector.getModulo());
 
         return angulo;
     }
