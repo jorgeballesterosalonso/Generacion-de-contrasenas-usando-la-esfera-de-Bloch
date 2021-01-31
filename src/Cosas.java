@@ -63,6 +63,7 @@ public class Cosas {
 
 	/**
 	 * Pide al usuario la tercera coordenada del punto en cuestión
+	 * 
 	 * @param sc
 	 */
 	private static void obtenerCoordenadaZ(Scanner sc) {
