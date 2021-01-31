@@ -1,45 +1,52 @@
 public class Vector {
-    private long coordX;
-    private long coordY;
-    private long coordZ;
+    private double modulo;
+    private double anguloOXY;
+    private double anguloOYZ;
+    private double anguloOXZ;
 
-    public long getCoordX() {
-        return this.coordX;
+    public double getModulo() {
+        return this.modulo;
     }
 
-    public void setCoordX(long coordX) {
-        this.coordX = coordX;
+    public void setModulo(double modulo) {
+        this.modulo = modulo;
     }
 
-    public long getCoordY() {
-        return this.coordY;
+    public double getAnguloOXY() {
+        return this.anguloOXY;
     }
 
-    public void setCoordY(long coordY) {
-        this.coordY = coordY;
+    public void setAnguloOXY(double anguloOXY) {
+        this.anguloOXY = anguloOXY;
     }
 
-    public long getCoordZ() {
-        return this.coordZ;
+    public double getAnguloOYZ() {
+        return this.anguloOYZ;
     }
 
-    public void setCoordZ(long coordZ) {
-        this.coordZ = coordZ;
+    public void setAnguloOYZ(double anguloOYZ) {
+        this.anguloOYZ = anguloOYZ;
+    }
+
+    public double getAnguloOXZ() {
+        return this.anguloOXZ;
+    }
+
+    public void setAnguloOXZ(double anguloOXZ) {
+        this.anguloOXZ = anguloOXZ;
     }
 
     @Override
     public String toString() {
-        return "{" + " coordX='" + getCoordX() + "'" + ", coordY='" + getCoordY() + "'" + ", coordZ='" + getCoordZ()
-                + "'" + "}";
+        return "{" + " modulo='" + getModulo() + "'" + ", anguloOXY='" + getAnguloOXY() + "'" + ", anguloOYZ='"
+                + getAnguloOYZ() + "'" + ", anguloOXZ='" + getAnguloOXZ() + "'" + "}";
     }
 
-    public Vector(long coordX, long coordY, long coordZ) {
-        this.coordX = coordX;
-        this.coordY = coordY;
-        this.coordZ = coordZ;
-    }
-
-    public Vector() {
+    public Vector(double modulo, double anguloOXY, double anguloOYZ, double anguloOXZ) {
+        this.modulo = modulo;
+        this.anguloOXY = anguloOXY;
+        this.anguloOYZ = anguloOYZ;
+        this.anguloOXZ = anguloOXZ;
     }
 
 }
