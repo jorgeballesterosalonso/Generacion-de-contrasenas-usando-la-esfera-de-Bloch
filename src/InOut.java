@@ -1,25 +1,28 @@
 import java.util.Scanner;
 
+/**
+ * @author Jorge Ballesteros
+ */
 public class InOut {
     static Scanner sc = new Scanner(System.in);
 
-    public static Vector crearVector() {
+    public static Punto crearPunto() {
 
-        Vector v = new Vector();
+        Punto p = new Punto();
 
         System.out.println("Ingrese la coordenada x del vector: ");
         long x = sc.nextLong();
-        v.setCoordX(x);
+        p.setCoordX(x);
 
         System.out.println("Ingrese la coordenada y del vector: ");
         long y = sc.nextLong();
-        v.setCoordY(y);
+        p.setCoordY(y);
 
         System.out.println("Ingrese la coordenada z del vector: ");
         long z = sc.nextLong();
-        v.setCoordZ(z);
+        p.setCoordZ(z);
 
-        return v;
+        return p;
 
     }
 }

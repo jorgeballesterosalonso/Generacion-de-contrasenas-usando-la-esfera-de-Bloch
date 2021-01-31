@@ -1,3 +1,6 @@
+/**
+ * @author Jorge Ballesteros
+ */
 public class Punto {
     private long coordX;
     private long coordY;
@@ -37,6 +40,9 @@ public class Punto {
         this.coordX = coordX;
         this.coordY = coordY;
         this.coordZ = coordZ;
+    }
+
+    public Punto() {
     }
 
 }

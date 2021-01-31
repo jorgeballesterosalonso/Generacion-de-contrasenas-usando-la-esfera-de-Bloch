@@ -1,8 +1,21 @@
+/**
+ * @author Jorge Ballesteros
+ * 
+ */
 public class Vector {
     private double modulo;
     private double anguloOXY;
     private double anguloOYZ;
     private double anguloOXZ;
+    private Punto punto;
+
+    public Punto getPunto() {
+        return this.punto;
+    }
+
+    public void setPunto(Punto punto) {
+        this.punto = punto;
+    }
 
     public double getModulo() {
         return this.modulo;
@@ -39,7 +52,7 @@ public class Vector {
     @Override
     public String toString() {
         return "{" + " modulo='" + getModulo() + "'" + ", anguloOXY='" + getAnguloOXY() + "'" + ", anguloOYZ='"
-                + getAnguloOYZ() + "'" + ", anguloOXZ='" + getAnguloOXZ() + "'" + "}";
+                + getAnguloOYZ() + "'" + ", anguloOXZ='" + getAnguloOXZ() + "'" + ", punto='" + getPunto() + "'" + "}";
     }
 
     public Vector(double modulo, double anguloOXY, double anguloOYZ, double anguloOXZ) {
@@ -47,6 +60,9 @@ public class Vector {
         this.anguloOXY = anguloOXY;
         this.anguloOYZ = anguloOYZ;
         this.anguloOXZ = anguloOXZ;
+    }
+
+    public Vector() {
     }
 
 }
